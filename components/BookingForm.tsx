@@ -15,11 +15,35 @@ const CRUISE_TYPES = [
 
 export function BookingForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // TODO(chris): wire to FareHarbor / Peek Pro / form-to-email endpoint
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    // Add your Web3Forms Access Key here from environment variables
+    // They are free and instant at web3forms.com
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "YOUR_ACCESS_KEY_HERE");
+    formData.append("subject", "New Cruise Booking Request from Aqua Tiki");
+    formData.append("from_name", "Aqua Tiki Website");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        console.error("Form submission failed");
+      }
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -55,8 +79,12 @@ export function BookingForm() {
                 <Textarea label="Anything we should know?" name="notes" />
               </div>
               <div className="sm:col-span-2 flex flex-wrap items-center gap-4 mt-2">
-                <button type="submit" className="btn-coral">
-                  Request a cruise <Icon name="arrow-right" className="h-4 w-4" />
+                <button type="submit" disabled={isSubmitting} className="btn-coral disabled:opacity-70 disabled:cursor-not-allowed">
+                  {isSubmitting ? "Sending Request..." : (
+                    <>
+                      Request a cruise <Icon name="arrow-right" className="h-4 w-4" />
+                    </>
+                  )}
                 </button>
                 <span className="text-[13px] text-muted">
                   No charge yet — we&rsquo;ll confirm by email.
