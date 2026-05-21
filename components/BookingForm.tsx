@@ -50,6 +50,10 @@ export function BookingForm() {
     <section id="book" className="relative bg-cream py-24 md:py-36 overflow-hidden">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 grid lg:grid-cols-12 gap-12 lg:gap-20">
         <div className="lg:col-span-7">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-hibiscus/10 border border-hibiscus/20 text-hibiscus text-[12px] font-bold tracking-wide uppercase mb-6 animate-pulse">
+            <Icon name="sun" className="h-3.5 w-3.5" />
+            Saturdays in June & July are booking out 3 weeks in advance
+          </div>
           <div className="eyebrow">Book a cruise</div>
           <RevealText
             as="h2"
@@ -62,6 +66,16 @@ export function BookingForm() {
             the cruise, and get you on the water. $50 deposit toward your cruise,
             10% off when paid in cash, weather-flexible rescheduling.
           </p>
+
+          <div className="mt-6 flex items-start gap-3 p-4 rounded-2xl bg-white border border-navy/[0.06] shadow-sm max-w-[480px]">
+            <div className="flex text-gold shrink-0 mt-0.5">
+              {[...Array(5)].map((_, i) => <Icon key={i} name="star" className="h-3.5 w-3.5" />)}
+            </div>
+            <p className="text-[13.5px] text-ink/80 leading-snug italic">
+              "Best part of our Lake Chatuge trip. The boat was spotless and Captain Chasady made sure everything was perfect."
+              <span className="block mt-1 font-semibold not-italic text-[12px] text-navy/60">— Sarah M.</span>
+            </p>
+          </div>
 
           {!submitted ? (
             <form
@@ -78,7 +92,7 @@ export function BookingForm() {
               <div className="sm:col-span-2">
                 <Textarea label="Anything we should know?" name="notes" />
               </div>
-              <div className="sm:col-span-2 flex flex-wrap items-center gap-4 mt-2">
+              <div className="sm:col-span-2 flex flex-col sm:flex-row sm:items-center gap-5 mt-2">
                 <button type="submit" disabled={isSubmitting} className="btn-coral disabled:opacity-70 disabled:cursor-not-allowed">
                   {isSubmitting ? "Sending Request..." : (
                     <>
@@ -86,9 +100,10 @@ export function BookingForm() {
                     </>
                   )}
                 </button>
-                <span className="text-[13px] text-muted">
-                  No charge yet — we&rsquo;ll confirm by email.
-                </span>
+                <div className="flex items-center gap-2 text-[13px] text-navy/70">
+                  <Icon name="sun" className="h-4 w-4 text-teal-d" />
+                  <span><strong>100% Weather Guarantee:</strong> Free reschedules if it storms.</span>
+                </div>
               </div>
             </form>
           ) : (
