@@ -18,12 +18,12 @@ export function Nav() {
   }, []);
 
   const links = [
-    { href: "#cruises", label: "Cruises" },
-    { href: "#lake", label: "The Lake" },
-    { href: "#captain", label: "Captain" },
-    { href: "#reviews", label: "Reviews" },
-    { href: "#faq", label: "FAQ" },
-    { href: "#book", label: "Book" },
+    { href: "/#cruises", label: "Cruises" },
+    { href: "/#lake", label: "The Lake" },
+    { href: "/gallery", label: "Gallery" },
+    { href: "/#captain", label: "Captain" },
+    { href: "/#reviews", label: "Reviews" },
+    { href: "/#faq", label: "FAQ" },
   ];
 
   return (
@@ -36,7 +36,7 @@ export function Nav() {
       ].join(" ")}
     >
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 flex items-center justify-between gap-6">
-        <a href="#top" className="flex items-center gap-2 group">
+        <a href="/#top" className="flex items-center gap-2 group">
           <span
             className="display text-[26px] leading-none transition-colors duration-500"
             style={{ color: scrolled ? "#0E2A45" : "#FAF5E8" }}
@@ -61,7 +61,7 @@ export function Nav() {
 
         <div className="hidden md:flex">
           <Magnetic>
-            <a href="#book" className="btn-coral text-[13px]">
+            <a href="/#book" className="btn-coral text-[13px]">
               Book a cruise
               <Icon name="arrow-right" className="h-4 w-4" />
             </a>
@@ -112,7 +112,7 @@ export function Nav() {
               </a>
             ))}
             <a
-              href="#book"
+              href="/#book"
               onClick={() => setOpen(false)}
               className="btn-coral mt-2 self-start"
             >

@@ -30,7 +30,7 @@ export function Footer() {
       <div className="relative mx-auto max-w-[1400px] px-6 md:px-10 pt-16 pb-10">
         <div className="grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
-            <a href="#top" className="display text-5xl md:text-6xl leading-none">
+            <a href="/#top" className="display text-5xl md:text-6xl leading-none">
               <em style={{ color: "#3CB6CB" }}>aqua</em>
               <span style={{ color: "#F5C24A" }}> tiki</span>
             </a>
@@ -71,19 +71,19 @@ export function Footer() {
           </div>
 
           <Col title="Cruises">
-            <Link href="#cruises">Sunset Cruise</Link>
-            <Link href="#cruises">Private Party</Link>
-            <Link href="#cruises">Date Night Float</Link>
-            <Link href="#cruises">Bachelorette</Link>
-            <Link href="#cruises">Custom Charter</Link>
+            <Link href="/sunset-cruise">Sunset Cruise</Link>
+            <Link href="/private-party">Private Party</Link>
+            <Link href="/#cruises">Date Night Float</Link>
+            <Link href="/#cruises">Bachelorette</Link>
+            <Link href="/#cruises">Custom Charter</Link>
           </Col>
 
           <Col title="Plan">
-            <Link href="#lake">The Lake</Link>
-            <Link href="#captain">Captain</Link>
-            <Link href="#reviews">Reviews</Link>
-            <Link href="#quiz">Vibe Quiz</Link>
-            <Link href="#book">Book</Link>
+            <Link href="/gallery">Gallery</Link>
+            <Link href="/#lake">The Lake</Link>
+            <Link href="/#captain">Captain</Link>
+            <Link href="/#reviews">Reviews</Link>
+            <Link href="/#book">Book</Link>
           </Col>
 
           <Col title="Contact">
