@@ -3,6 +3,7 @@ import { Fraunces, Inter, Caveat, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { LenisProvider } from "@/components/LenisProvider";
 import { TikiEasterEgg } from "@/components/TikiEasterEgg";
+import { ExitIntentPopup } from "@/components/ExitIntentPopup";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -59,6 +60,7 @@ export default function RootLayout({
       <body>
         <LenisProvider>{children}</LenisProvider>
         <TikiEasterEgg />
+        <ExitIntentPopup />
       </body>
     </html>
   );

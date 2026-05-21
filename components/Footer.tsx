@@ -98,9 +98,9 @@ export function Footer() {
             © {new Date().getFullYear()} Lakeside Ventures LLC · USCG Licensed · Hayesville, NC
           </div>
           <div className="flex items-center gap-6">
-            <a href="#" className="link-underline">Privacy</a>
-            <a href="#" className="link-underline">Terms</a>
-            <a href="#" className="link-underline">Waiver</a>
+            <a href="/privacy" className="link-underline">Privacy</a>
+            <a href="/terms" className="link-underline">Terms</a>
+            <a href="/waiver" className="link-underline">Waiver</a>
           </div>
         </div>
       </div>
