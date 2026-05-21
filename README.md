@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aqua Tiki — Lake Chatuge Tiki Boat Cruises
 
-## Getting Started
+Awwwards-tier marketing site for Aqua Tiki, a USCG-licensed tiki boat on Lake Chatuge in Hayesville, NC.
 
-First, run the development server:
+**Stack:** Next.js 16 · React 19 · TypeScript · Tailwind CSS v4 · GSAP · Lenis · Three.js / R3F · Framer Motion
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Drop in real photos
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The site reads from `public/photos/`. Drop JPEGs with these exact names — the rest is automatic:
 
-## Learn More
+| Filename                       | Where it shows                                |
+| ------------------------------ | --------------------------------------------- |
+| `hero-boat-sunset.jpg`         | Hero background (full bleed) + cruise tiles   |
+| `hero-deck-detail.jpg`         | Hero collage (bottom left card)               |
+| `hero-guests.jpg`              | Hero collage (top right card)                 |
+| `lake-chatuge-wide.jpg`        | The Lake section                              |
+| `cruise-sunset.jpg`            | Sunset Cruise bento tile                      |
+| `cruise-party.jpg`             | Private Party bento tile                      |
+| `cruise-date.jpg`              | Date Night Float bento tile                   |
+| `cruise-bachelorette.jpg`      | Bachelorette bento tile                       |
+| `cruise-family.jpg`            | Family Day bento tile                         |
+| `cruise-custom.jpg`            | Custom Charter bento tile                     |
+| `captain.jpg`                  | Captain section portrait                      |
 
-To learn more about Next.js, take a look at the following resources:
+Suggested sizes: hero ~2400×1600, others ~1600×1200, < 400KB each. If a photo is missing, the slot renders a brand-color gradient mesh — no broken layout.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Open TODOs
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Search the codebase for `TODO(chris):` to find what needs real info:
 
-## Deploy on Vercel
+- Real pricing per cruise tier (currently realistic placeholders)
+- Real captain bio + USCG license number
+- Google Place ID for live reviews
+- Booking form endpoint (FareHarbor / Peek Pro / etc.)
+- Marina slip address and phone number
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Easter egg
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Press `T-I-K-I` anywhere on the page.
+
+## Deploy
+
+```bash
+vercel --prod
+```
+
+Point `aquatiki.net` at the Vercel deployment when DNS is ready.
+
+## Component map
+
+```
+app/
+  layout.tsx        — fonts, metadata, Lenis provider, TIKI easter egg
+  page.tsx          — section composition
+  globals.css       — Tailwind v4 + brand tokens + animations
+
+components/
+  Nav.tsx           — fixed, scroll-aware, magnetic CTA
+  Hero.tsx          — full-bleed sunset photo + WebGL overlay + 2-photo collage
+  HeroShader.tsx    — R3F sunset shader (soft-light blended)
+  Marquee.tsx       — scroll-velocity strip
+  Lake.tsx          — sticky stats + parallax photo
+  CruiseBento.tsx   — 6 asymmetric tiles, 3D tilt on hover
+  Captain.tsx       — dark-mode pocket + topographic backdrop
+  Reviews.tsx       — horizontal-scroll deck
+  VibeQuiz.tsx      — 3-step interactive recommendation
+  BookingForm.tsx   — form + stylized marina map
+  Footer.tsx        — animated wave separator
+  TikiEasterEgg.tsx — keypress hibiscus burst
+  ui/
+    Icon.tsx        — custom SVG icon set (no emoji)
+    PhotoSlot.tsx   — img with gradient-mesh fallback
+    RevealText.tsx  — word-by-word entrance
+    Magnetic.tsx    — cursor-attracted hover
+
+lib/
+  photos.ts         — photo manifest
+```
