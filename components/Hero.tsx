@@ -72,7 +72,7 @@ export function Hero() {
               transition={{ duration: 0.9, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="mt-8 max-w-[520px] text-[17px] md:text-[19px] text-cream/85 leading-[1.55]"
             >
-              Two tiki pontoons. One USCG-licensed captain. $150 an hour, up to
+              Two tiki pontoons. USCG-approved captains. $150 an hour, up to
               six guests, BYOB welcome. Two hours of laid-back lake therapy
               &mdash; golden hour included.
             </motion.p>
@@ -110,7 +110,7 @@ export function Hero() {
               <div className="h-3 w-px bg-cream/30" />
               <div className="flex items-center gap-2">
                 <Icon name="star" className="h-3 w-3 text-gold" />
-                <span className="mono text-[11px] uppercase tracking-[0.22em]">5.0 Rated</span>
+                <span className="mono text-[11px] uppercase tracking-[0.22em]">Guest Ready</span>
               </div>
               <div className="hidden sm:block h-3 w-px bg-cream/30" />
               <div className="hidden sm:flex items-center gap-2">
@@ -191,14 +191,14 @@ export function Hero() {
 
         {/* Bottom hairline meta */}
         <div className="relative z-10 border-t border-cream/15 backdrop-blur-[2px]">
-          <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-5 flex flex-wrap items-center justify-between gap-4 text-cream/80 text-[12px] tracking-wide">
-            <div className="mono uppercase tracking-[0.22em]">EST. 2024 · Hayesville, NC</div>
+          <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-5 flex items-center justify-between gap-3 text-cream/80 text-[12px] tracking-wide">
+            <div className="mono uppercase tracking-[0.18em] sm:tracking-[0.22em] text-[10px] sm:text-[12px]">EST. 2024 · Hayesville, NC</div>
             <div className="hidden md:flex items-center gap-2">
               <Icon name="wave" className="h-4 w-4 text-teal" />
               <span>7,050 acres of Smoky Mountain lake</span>
             </div>
-            <a href="#cruises" className="flex items-center gap-2 group">
-              <span className="mono uppercase tracking-[0.22em] text-[11px]">Scroll</span>
+            <a href="#cruises" className="shrink-0 flex items-center gap-2 group">
+              <span className="hidden sm:inline mono uppercase tracking-[0.22em] text-[11px]">Scroll</span>
               <span
                 className="inline-block h-9 w-9 rounded-full border border-cream/30 flex items-center justify-center transition-transform group-hover:translate-y-1"
               >

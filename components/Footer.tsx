@@ -36,8 +36,8 @@ export function Footer() {
             </a>
             <p className="mt-6 text-cream/70 max-w-sm text-[15px] leading-relaxed">
               Tiki pontoon cruises on Lake Chatuge in Hayesville, NC. Sunsets,
-              parties, and good vibes &mdash; April through November. Run by Lisa
-              &amp; Chasady out of Margarita Jack&rsquo;s Marina.
+              parties, and good vibes &mdash; April through November. Run out of
+              Margarita Jack&rsquo;s Marina with USCG-approved captains.
             </p>
             <div className="mt-6 flex items-center gap-3">
               <a
@@ -61,8 +61,8 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="#"
-                aria-label="Google"
+                href="/#book"
+                aria-label="Plan a cruise"
                 className="h-10 w-10 rounded-full border border-cream/25 flex items-center justify-center hover:bg-cream hover:text-navy transition-colors"
               >
                 <Icon name="star" className="h-4 w-4" />
@@ -81,13 +81,13 @@ export function Footer() {
           <Col title="Plan">
             <Link href="/gallery">Gallery</Link>
             <Link href="/#lake">The Lake</Link>
-            <Link href="/#captain">Captain</Link>
+            <Link href="/#captain">Crew</Link>
             <Link href="/#reviews">Reviews</Link>
             <Link href="/#book">Book</Link>
           </Col>
 
           <Col title="Contact">
-            <Link href="mailto:Chasadynicole@gmail.com">Chasadynicole@gmail.com</Link>
+            <Link href="mailto:aquatikicruise@outlook.com">aquatikicruise@outlook.com</Link>
             <Link href="tel:+18453047516">(845) 304-7516</Link>
             <Link href="#">Margarita Jack&rsquo;s Marina · Hayesville, NC</Link>
           </Col>

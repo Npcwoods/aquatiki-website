@@ -34,7 +34,7 @@ const FAQS: QA[] = [
   },
   {
     q: "Can we play our own music?",
-    a: "Please do. Aux cord and Bluetooth both work — bring your sunset playlist or your bachelorette anthem, and we'll set the vibe. Captain Jonathan has a backup playlist ready if you forget yours.",
+    a: "Please do. Aux cord and Bluetooth both work — bring your sunset playlist or your bachelorette anthem, and we'll set the vibe. The crew keeps a lake-day backup playlist ready if you forget yours.",
   },
   {
     q: "How far in advance should I book?",
@@ -50,7 +50,7 @@ const FAQS: QA[] = [
   },
   {
     q: "How does payment work? Are tips expected?",
-    a: "$50 deposit secures your date (goes toward the cruise), with the balance due before we leave the dock. 10% off when you pay in cash. Tips for Captain Jonathan are always appreciated — never required.",
+    a: "$50 deposit secures your date (goes toward the cruise), with the balance due before we leave the dock. 10% off when you pay in cash. Tips for the crew are always appreciated — never required.",
   },
 ];
 
@@ -179,7 +179,7 @@ export function Faq() {
               Still got questions?
             </span>
             <span className="text-ink/70 text-[14.5px]">
-              Captain Jonathan is one tap away.
+              The Aqua Tiki crew is one tap away.
             </span>
             <a
               href="sms:+18453047516"

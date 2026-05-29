@@ -8,6 +8,7 @@ export function ExitIntentPopup() {
   const [show, setShow] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     // Only run on client
@@ -32,12 +33,21 @@ export function ExitIntentPopup() {
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setError(null);
+
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+    if (!accessKey || accessKey === "YOUR_ACCESS_KEY_HERE") {
+      setError("VIP signup is not connected yet. Email aquatikicruise@outlook.com and we will get you on the list.");
+      return;
+    }
+
     setIsSubmitting(true);
 
     const formData = new FormData(e.currentTarget);
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "YOUR_ACCESS_KEY_HERE");
+    formData.append("access_key", accessKey);
     formData.append("subject", "New VIP List Signup from Aqua Tiki");
     formData.append("from_name", "Aqua Tiki Website");
+    formData.append("replyto", String(formData.get("email") || ""));
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -49,9 +59,12 @@ export function ExitIntentPopup() {
         setSubmitted(true);
         // Automatically close after 3 seconds on success
         setTimeout(() => setShow(false), 3000);
+      } else {
+        setError("That did not send. Email aquatikicruise@outlook.com and we will get you on the list.");
       }
     } catch (err) {
       console.error(err);
+      setError("We could not reach the signup service. Email aquatikicruise@outlook.com and we will get you on the list.");
     } finally {
       setIsSubmitting(false);
     }
@@ -108,6 +121,11 @@ export function ExitIntentPopup() {
                     <button type="submit" disabled={isSubmitting} className="btn-coral w-full justify-center disabled:opacity-70 disabled:cursor-not-allowed">
                       {isSubmitting ? "Saving..." : "Send me my $25 off"}
                     </button>
+                    {error && (
+                      <p className="rounded-2xl border border-hibiscus/25 bg-hibiscus/10 px-4 py-3 text-[13px] text-hib-d">
+                        {error}
+                      </p>
+                    )}
                   </form>
                   <button onClick={() => setShow(false)} className="mt-5 text-[12px] text-ink/50 underline hover:text-ink/80 transition-colors">
                     No thanks, I&rsquo;ll pay full price.

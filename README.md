@@ -37,10 +37,10 @@ Suggested sizes: hero ~2400×1600, others ~1600×1200, < 400KB each. If a photo 
 
 Search the codebase for `TODO(chris):` to find what needs real info:
 
-- Real pricing per cruise tier (currently realistic placeholders)
-- Real captain bio + USCG license number
-- Google Place ID for live reviews
-- Booking form endpoint (FareHarbor / Peek Pro / etc.)
+- Confirm final pricing per cruise tier
+- Add real public review links once ratings are live
+- Set `NEXT_PUBLIC_WEB3FORMS_KEY` in Vercel and attach it to `aquatikicruise@outlook.com`
+- Replace request forms with FareHarbor / Peek Pro / etc. if the owner adopts a booking platform
 - Marina slip address and phone number
 
 ## Easter egg
@@ -70,7 +70,7 @@ components/
   Marquee.tsx       — scroll-velocity strip
   Lake.tsx          — sticky stats + parallax photo
   CruiseBento.tsx   — 6 asymmetric tiles, 3D tilt on hover
-  Captain.tsx       — dark-mode pocket + topographic backdrop
+  Captain.tsx       — crew/safety pocket + topographic backdrop
   Reviews.tsx       — horizontal-scroll deck
   VibeQuiz.tsx      — 3-step interactive recommendation
   BookingForm.tsx   — form + stylized marina map

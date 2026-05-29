@@ -59,7 +59,7 @@ const CRUISES: Cruise[] = [
   {
     id: "date",
     name: "Date Night Float",
-    blurb: "Two seats, one captain, zero distractions. The shortest vacation of your life.",
+    blurb: "Two seats, one easy lake route, zero distractions. The shortest vacation of your life.",
     duration: "2 hrs",
     price: "$300",
     guests: "up to 2",
@@ -234,7 +234,7 @@ export function CruiseBento() {
           </div>
           <p className="text-[16px] text-ink/70 max-w-[400px]">
             $150/hr · 2 hour minimum · up to 6 guests. Every cruise comes with a
-            USCG-licensed captain, the tiki bar cooler, your music on the aux,
+            USCG-approved crew, the tiki bar cooler, your music on the aux,
             and BYOB welcome.
           </p>
         </div>

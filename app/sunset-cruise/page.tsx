@@ -23,7 +23,7 @@ export default function SunsetCruise() {
               Golden hour on the water.
             </RevealText>
             <p className="mt-8 text-[18px] text-ink/75 leading-relaxed max-w-2xl">
-              Our signature cruise. Two hours of laid-back lake therapy exactly as the sun dips below the Blue Ridge mountains. Bring your favorite drinks, pick the playlist, and let our captain handle the rest.
+              Our signature cruise. Two hours of laid-back lake therapy exactly as the sun dips below the Blue Ridge mountains. Bring your favorite drinks, pick the playlist, and let our USCG-approved crew handle the rest.
             </p>
           </div>
 
@@ -41,7 +41,7 @@ export default function SunsetCruise() {
             <div className="bg-white rounded-3xl p-8 border border-navy/[0.06] shadow-sm">
               <Icon name="sparkle" className="h-6 w-6 text-teal-d mb-4" />
               <h3 className="mono text-[11px] uppercase tracking-[0.2em] text-navy font-bold">What's Included</h3>
-              <p className="mt-2 text-[15px] text-ink/75">USCG licensed captain, iced cooler, Bluetooth sound system, and life jackets.</p>
+              <p className="mt-2 text-[15px] text-ink/75">USCG-approved crew, iced cooler, Bluetooth sound system, and life jackets.</p>
             </div>
           </div>
         </div>

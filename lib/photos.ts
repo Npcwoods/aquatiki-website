@@ -28,5 +28,5 @@ export const photos = {
   cruiseFamily: { src: "/photos/cruise-family.jpg", alt: "Family enjoying the lake" },
   cruiseCustom: { src: "/photos/cruise-custom.jpg", alt: "Custom charter on Lake Chatuge" },
 
-  captain: { src: "/photos/captain.jpg", alt: "Captain Jonathan aboard the Aqua Tiki on Lake Chatuge" },
+  captain: { src: "/photos/captain.jpg", alt: "Aqua Tiki crew aboard the tiki boat on Lake Chatuge" },
 } as const;

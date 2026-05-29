@@ -28,20 +28,20 @@ export function Captain() {
 
       <div className="relative mx-auto max-w-[1400px] px-6 md:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         <div className="lg:col-span-5 order-2 lg:order-1">
-          <div className="eyebrow eyebrow-light">Your captain</div>
+          <div className="eyebrow eyebrow-light">Your crew</div>
           <RevealText
             as="h2"
             className="display text-[44px] md:text-6xl lg:text-7xl text-cream mt-5"
           >
-            {"Meet Captain Jonathan."}
+            {"Good vibes, steady hands."}
           </RevealText>
 
           <p className="mt-6 text-[17px] leading-[1.6] text-cream/75 max-w-[500px]">
             Aqua Tiki is run by Lisa &amp; Chasady out of Margarita Jack&rsquo;s
-            Marina, with USCG-licensed Captain Jonathan at the helm. You bring
-            the people; we handle the rest &mdash; safety brief, a cooler stocked
-            with beer &amp; wine, the perfect anchor spot for sunset, and your
-            playlist on the aux. BYOB welcome.
+            Marina, with USCG-approved captains keeping every cruise easy,
+            safe, and fun. You bring the people; we handle the rest &mdash; safety
+            brief, cooler, music, the perfect sunset route, and laid-back lake
+            energy from dock to dock. BYOB welcome.
           </p>
 
           <div className="mt-10 grid grid-cols-2 gap-y-6 gap-x-8 max-w-md">
@@ -69,7 +69,7 @@ export function Captain() {
                 <div className="mono text-[11px] uppercase tracking-[0.22em] text-cream/55">
                   Safety
                 </div>
-                <div className="text-[15px] mt-1">USCG licensed · 6 max</div>
+                <div className="text-[15px] mt-1">USCG approved · 6 max</div>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -85,7 +85,7 @@ export function Captain() {
 
           <div className="mt-10 flex items-center gap-4">
             <a href="#book" className="btn-coral">
-              Book with Jonathan <Icon name="arrow-right" className="h-4 w-4" />
+              Book the boat <Icon name="arrow-right" className="h-4 w-4" />
             </a>
             <a href="#cruises" className="text-cream/80 link-underline text-[14px]">
               See cruises
@@ -105,7 +105,7 @@ export function Captain() {
               src={photos.captain.src}
               alt={photos.captain.alt}
               fallbackVariant={3}
-              fallbackLabel="captain · hayesville"
+              fallbackLabel="crew · hayesville"
               className="absolute inset-0"
             />
           </motion.div>
@@ -120,7 +120,7 @@ export function Captain() {
           >
             <Icon name="star" className="h-4 w-4" />
             <span className="mono text-[11px] uppercase tracking-[0.18em] font-semibold">
-              5.0 on Google
+              USCG approved
             </span>
           </motion.div>
         </div>

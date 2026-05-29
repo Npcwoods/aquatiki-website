@@ -13,23 +13,43 @@ export default function WaiverPage() {
         <Nav />
       </div>
       <div className="flex-1 max-w-3xl mx-auto w-full px-6 pt-32 pb-24 text-ink">
-        <h1 className="display text-4xl text-navy mb-8">Passenger Liability Waiver</h1>
-        <div className="prose prose-navy max-w-none text-[15px] leading-relaxed">
+        <h1 className="display text-4xl text-navy mb-8">Passenger Waiver</h1>
+        <div className="space-y-6 text-[15px] leading-relaxed text-ink/80">
           <p>
-            <em>Please review the following waiver before boarding the Aqua Tiki.</em>
+            This page summarizes the safety expectations for Aqua Tiki guests.
+            A separate signed waiver or booking platform agreement may be
+            required before boarding.
           </p>
+
+          <h2 className="text-xl font-bold text-navy pt-4">Assumption of risk</h2>
           <p>
-            By boarding the Aqua Tiki vessel, you agree to the following terms and release of liability.
+            Boating involves inherent risks, including changing weather, waves,
+            slips, falls, docks, other vessels, and guest behavior. By boarding,
+            guests acknowledge those risks and agree to act responsibly.
           </p>
-          <h2 className="text-xl font-bold mt-8 mb-4">Assumption of Risk</h2>
+
+          <h2 className="text-xl font-bold text-navy pt-4">Safety rules</h2>
           <p>
-            I am aware that boating and water activities involve inherent risks, including but not limited to weather changes, water conditions, and the actions of other boaters. I voluntarily assume all such risks.
+            Guests must follow crew instructions at all times, stay within
+            posted capacity limits, use life jackets when directed, avoid unsafe
+            movement while underway, and keep hands and feet inside the vessel.
           </p>
-          <div className="mt-12 p-6 bg-palm/10 rounded-2xl border border-palm/20">
-            <p className="text-sm">
-              <strong>Note:</strong> This is a placeholder. For a legal liability waiver, consult with your insurance provider or an attorney. You can also link directly to a digital signing platform (like DocuSign or FareHarbor) from this page.
-            </p>
-          </div>
+
+          <h2 className="text-xl font-bold text-navy pt-4">Alcohol and conduct</h2>
+          <p>
+            BYOB is welcome for guests of legal drinking age, but unsafe or
+            disruptive behavior is not. The crew may refuse boarding, return to
+            dock, or end a cruise early if guest conduct creates a safety issue.
+          </p>
+
+          <h2 className="text-xl font-bold text-navy pt-4">Questions</h2>
+          <p>
+            For waiver or safety questions before your cruise, email{" "}
+            <a className="link-underline text-hib-d font-medium" href="mailto:aquatikicruise@outlook.com">
+              aquatikicruise@outlook.com
+            </a>
+            .
+          </p>
         </div>
       </div>
       <Footer />

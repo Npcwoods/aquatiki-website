@@ -66,7 +66,7 @@ function recommend(answers: Record<string, string>): Recommendation {
   if (mood === "couple" && (vibe === "sunset" || vibe === "float")) {
     return {
       cruise: "Date Night Float",
-      blurb: "Two seats, one captain, zero distractions.",
+      blurb: "Two seats, one easy lake route, zero distractions.",
       href: "#cruises",
     };
   }

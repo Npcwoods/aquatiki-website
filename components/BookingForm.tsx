@@ -16,17 +16,25 @@ const CRUISE_TYPES = [
 export function BookingForm() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setError(null);
+
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+    if (!accessKey || accessKey === "YOUR_ACCESS_KEY_HERE") {
+      setError("Online requests are not connected yet. Please email aquatikicruise@outlook.com or call/text us.");
+      return;
+    }
+
     setIsSubmitting(true);
 
     const formData = new FormData(e.currentTarget);
-    // Add your Web3Forms Access Key here from environment variables
-    // They are free and instant at web3forms.com
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "YOUR_ACCESS_KEY_HERE");
+    formData.append("access_key", accessKey);
     formData.append("subject", "New Cruise Booking Request from Aqua Tiki");
     formData.append("from_name", "Aqua Tiki Website");
+    formData.append("replyto", String(formData.get("email") || ""));
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -38,9 +46,11 @@ export function BookingForm() {
         setSubmitted(true);
       } else {
         console.error("Form submission failed");
+        setError("Something went sideways sending the request. Please email aquatikicruise@outlook.com or call/text us.");
       }
     } catch (err) {
       console.error(err);
+      setError("We could not reach the booking form service. Please email aquatikicruise@outlook.com or call/text us.");
     } finally {
       setIsSubmitting(false);
     }
@@ -72,8 +82,8 @@ export function BookingForm() {
               {[...Array(5)].map((_, i) => <Icon key={i} name="star" className="h-3.5 w-3.5" />)}
             </div>
             <p className="text-[13.5px] text-ink/80 leading-snug italic">
-              "Best part of our Lake Chatuge trip. The boat was spotless and Captain Chasady made sure everything was perfect."
-              <span className="block mt-1 font-semibold not-italic text-[12px] text-navy/60">— Sarah M.</span>
+              Fresh lake air, your playlist, a cooler ready to go, and a safe crew handling the dock-to-sunset details.
+              <span className="block mt-1 font-semibold not-italic text-[12px] text-navy/60">Aqua Tiki cruise request</span>
             </p>
           </div>
 
@@ -105,6 +115,11 @@ export function BookingForm() {
                   <span><strong>100% Weather Guarantee:</strong> Free reschedules if it storms.</span>
                 </div>
               </div>
+              {error && (
+                <p className="sm:col-span-2 rounded-2xl border border-hibiscus/25 bg-hibiscus/10 px-4 py-3 text-[14px] text-hib-d">
+                  {error}
+                </p>
+              )}
             </form>
           ) : (
             <div className="mt-10 rounded-3xl border border-palm/30 bg-palm/5 p-8">
@@ -189,8 +204,8 @@ export function BookingForm() {
               </div>
 
               <div className="mt-7 pt-6 border-t border-cream/15 flex flex-col gap-2 text-[14px]">
-                <a className="link-underline inline-flex items-center gap-2" href="mailto:Chasadynicole@gmail.com">
-                  <span className="text-gold">✦</span> Chasadynicole@gmail.com
+                <a className="link-underline inline-flex items-center gap-2" href="mailto:aquatikicruise@outlook.com">
+                  <span className="text-gold">✦</span> aquatikicruise@outlook.com
                 </a>
                 <a className="link-underline inline-flex items-center gap-2" href="tel:+18453047516">
                   <span className="text-gold">✦</span> (845) 304-7516

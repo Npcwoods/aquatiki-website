@@ -21,7 +21,7 @@ export function Nav() {
     { href: "/#cruises", label: "Cruises" },
     { href: "/#lake", label: "The Lake" },
     { href: "/gallery", label: "Gallery" },
-    { href: "/#captain", label: "Captain" },
+    { href: "/#captain", label: "Crew" },
     { href: "/#reviews", label: "Reviews" },
     { href: "/#faq", label: "FAQ" },
   ];
